@@ -141,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(width: 50.0,),
-                    Text('Contact Us'),
+                    Text('About'),
                     SizedBox(width: 100.0,),
                     Text('Contact Us'),
                     SizedBox(width: 100.0,),
