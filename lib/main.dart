@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: Brightness.dark,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -28,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> list=[
+  List<String> list = [
     'Cosmology is a branch of astronomy that involves the origin and evolution of the universe, from the Big Bang to today and on into the future. According to NASA, the definition of cosmology is "the scientific study of the large scale properties of the universe as a whole."',
     'History',
     "Humanity's understanding of the universe has evolved significantly over time. In the early history of astronomy, Earth was regarded as the center of all things, with planets and stars orbiting it. In the 16th century, Polish scientist Nicolaus Copernicus suggested that Earth and the other planets in the solar system in fact orbited the sun, creating a profound shift in the understanding of the cosmos. In the late 17th century, Isaac Newton calculated how the forces between planets — specifically the gravitational forces — interacted. The dawn of the 20th century brought further insights into comprehending the vast universe. Albert Einstein proposed the unification of space and time in his General Theory of Relativity. In the early 1900s, scientists were debating whether the Milky Way contained the whole universe within its span, or whether it was simply one of many collections of stars. Edwin Hubble calculated the distance to a fuzzy nebulous object in the sky and determined that it lay outside of the Milky Way, proving our galaxy to be a small drop in the enormous universe. Using General Relativity to lay the framework, Hubble measured other galaxies and determined that they were rushing away from the us, leading him to conclude that the universe was not static but expanding.",
@@ -41,29 +42,22 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: CupertinoColors.black,
       appBar: AppBar(
         backgroundColor: CupertinoColors.black,
       ),
       drawer: Drawer(
         child: Container(
-          decoration: BoxDecoration(
-            color: Colors.transparent
-          ),
+          decoration: BoxDecoration(color: Colors.transparent),
           child: Container(
             decoration: BoxDecoration(
-              //backgroundBlendMode: BlendMode.color,
+                //backgroundBlendMode: BlendMode.color,
                 color: Colors.transparent,
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: [
-                      Colors.blue,
-                      Colors.purple
-                    ]
-                ),
-                borderRadius:BorderRadius.only(topRight: Radius.circular(20.0))
-            ),
+                    colors: [Colors.blue, Colors.purple]),
+                borderRadius:
+                    BorderRadius.only(topRight: Radius.circular(20.0))),
             child: ListView(
               children: [
                 buildListTile('HOME'),
@@ -81,70 +75,121 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             height: 100.0,
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-                Colors.lightBlueAccent,
-                Colors.yellowAccent
-              ]),
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(80.0),
-              )
-            ),
+                gradient: LinearGradient(
+                    colors: [Colors.lightBlueAccent, Colors.yellowAccent]),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(80.0),
+                )),
             child: Padding(
-              padding:  EdgeInsets.only(top:20.0),
+              padding: EdgeInsets.only(top: 20.0),
               child: ListTile(
-                title: Text('COSMOLOGY',textAlign: TextAlign.center,style: TextStyle(
-                  fontSize: 30.0,fontWeight: FontWeight.bold
-                ),),
+                title: Text(
+                  'COSMOLOGY',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ),
-          SizedBox(height: 50.0,),
+          SizedBox(
+            height: 50.0,
+          ),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(list[0],style: TextStyle(color: Colors.white,fontSize: 20.0,),),
-                SizedBox(height: 40.0,),
-                Text(list[1],style: TextStyle(fontSize: 30.0,color: Colors.white,fontWeight: FontWeight.bold),),
-                SizedBox(height: 40.0,),
-                Text(list[2],style: TextStyle(fontSize: 20.0,color: Colors.white),),
-                SizedBox(height: 40.0,),
-                Text(list[3],style: TextStyle(fontSize: 30.0,color: Colors.white,fontWeight: FontWeight.bold),),
-                SizedBox(height: 40.0,),
-                Text(list[4],style: TextStyle(fontSize: 20.0,color: Colors.white),),
-                SizedBox(height: 40.0,),
-                Text(list[5],style: TextStyle(fontSize: 30.0,color: Colors.white,fontWeight: FontWeight.bold),),
-                SizedBox(height: 40.0,),
-                Text(list[6],style: TextStyle(fontSize: 20.0,color: Colors.white),),
-                SizedBox(height: 20.0,),
-              ],
-            )
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    list[0],
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  Text(
+                    list[1],
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  Text(
+                    list[2],
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  Text(
+                    list[3],
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  Text(
+                    list[4],
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  Text(
+                    list[5],
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  Text(
+                    list[6],
+                    style: TextStyle(fontSize: 20.0, color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                ],
+              )),
           Container(
             decoration: BoxDecoration(
                 //color: Colors.grey[100],
-              gradient: LinearGradient(
-                colors: [
-                  Colors.blue,
-                  Colors.purple
-                ]
-              ),
-                borderRadius: BorderRadius.only(topRight: Radius.circular(100.0))
-            ),
-            height  : 200.0,
+                gradient: LinearGradient(colors: [Colors.blue, Colors.purple]),
+                borderRadius:
+                    BorderRadius.only(topRight: Radius.circular(100.0))),
+            height: size.height / 8,
             child: Column(
               children: [
-                SizedBox(height: 30.0,),
+                SizedBox(
+                  height: 30.0,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(width: 50.0,),
+                    SizedBox(
+                      width: 50.0,
+                    ),
                     Text('About'),
-                    SizedBox(width: 100.0,),
+                    SizedBox(
+                      width: 100.0,
+                    ),
                     Text('Contact Us'),
-                    SizedBox(width: 100.0,),
+                    SizedBox(
+                      width: 100.0,
+                    ),
                   ],
                 )
               ],
@@ -157,8 +202,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   ListTile buildListTile(String text) {
     return ListTile(
-              title: Text(text),
-              onTap: (){},
-            );
+      title: Text(text),
+      onTap: () {
+        Navigator.of(context).pop();
+      },
+    );
   }
 }
